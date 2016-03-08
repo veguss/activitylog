@@ -15,6 +15,16 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
+
+    }
+
+    /**
+     * Register the service provider.
+     *
+     * @return void
+     */
+    public function boot()
+    {
         $timestamp = date('Y_m_d_His', time());
 
         $this->publishes([
