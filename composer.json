@@ -1,0 +1,21 @@
+{
+    "name": "akmuhammet/activitylog",
+    "description": "A package that logs user's activities",
+    "license": "MIT",
+    "keywords": ["activity", "activitylog"],
+    "authors": [
+        {
+            "name": "Akmuhammet Jumayev",
+            "email": "akmuhammet@gmail.com"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "4.0.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "akmuhammet\\ActivityLog\\": "src"
+        }
+    }
+}
