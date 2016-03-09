@@ -17,8 +17,15 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('activitylog', ActivityLogger::class);
-        $this->app->bind(LogHandlerInterface::class, EloquentHandler::class);
+        $this->app->singleton(
+            'activitylog',
+            ActivityLogger::class
+        );
+
+        $this->app->bind(
+            LogHandlerInterface::class,
+            EloquentHandler::class
+        );
     }
 
     /**
@@ -42,7 +49,7 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return [ActivityLogger::class];
+        return ['activitylog'];
     }
 
 }
