@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class ActivityLogServiceProvider extends ServiceProvider
 {
 
-    protected $defer = false;
+    protected $defer = true;
 
     /**
      * Register the service provider.
@@ -34,4 +34,15 @@ class ActivityLogServiceProvider extends ServiceProvider
             __DIR__ . '/migrations/create_activity_logs_table.php' => database_path('/migrations/' . $timestamp . '_create_activity_logs_table.php')
         ], 'migrations');
     }
+
+    /**
+     * Get the services provided by the provider.
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return [ActivityLogger::class];
+    }
+
 }
