@@ -8,6 +8,8 @@ class Activity extends Eloquent
 {
     protected $table = 'activity_logs';
 
+    protected $fillable = ['description', 'user_id', 'ip'];
+
     /**
      * @return mixed
      */

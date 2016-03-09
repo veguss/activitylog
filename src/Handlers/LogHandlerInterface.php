@@ -10,8 +10,8 @@ interface LogHandlerInterface
     /**
      * Logs activity
      *
-     * @param $text
+     * @param $description
      * @param null $user_id
      */
-    public function log($text, $user_id, $ip);
+    public function log($description, $user_id, $ip);
 }
