@@ -1,6 +1,6 @@
 <?php
 
-namespace BelgiLabs\ActivityLog;
+namespace BelgiLabs\ActivityLog\Models;
 
 use Eloquent;
 

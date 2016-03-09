@@ -15,7 +15,15 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
+        $this->app->bind(
+            'activitylog',
+            'BelgiLabs\ActivityLog\ActivityLog'
+        );
 
+        $this->app->bind(
+            'BelgiLabs\ActivityLog\Handlers\LogHandlerInterface',
+            'BelgiLabs\ActivityLog\Handlers\EloquentHandler'
+        );
     }
 
     /**
