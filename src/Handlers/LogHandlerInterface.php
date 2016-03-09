@@ -2,8 +2,6 @@
 
 namespace BelgiLabs\ActivityLog\Handlers;
 
-use Log;
-
 interface LogHandlerInterface
 {
 

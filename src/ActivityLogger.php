@@ -3,6 +3,7 @@
 namespace BelgiLabs\ActivityLog;
 
 use BelgiLabs\ActivityLog\Handlers\LogHandlerInterface;
+use Illuminate\Contracts\Auth\Guard;
 use Request;
 
 class ActivityLogger

@@ -2,6 +2,7 @@
 namespace BelgiLabs\ActivityLog;
 
 use BelgiLabs\ActivityLog\Handlers\EloquentHandler;
+use BelgiLabs\ActivityLog\Handlers\LogHandlerInterface;
 use Illuminate\Support\ServiceProvider;
 
 class ActivityLogServiceProvider extends ServiceProvider
@@ -16,15 +17,8 @@ class ActivityLogServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind(
-            ActivityLogger::class,
-            ActivityLogger::class
-        );
-
-        $this->app->bind(
-            LogHandlerInterface::class,
-            EloquentHandler::class
-        );
+        $this->app->bind('activitylog', ActivityLogger::class);
+        $this->app->bind(LogHandlerInterface::class, EloquentHandler::class);
     }
 
     /**
