@@ -8,7 +8,7 @@ use Illuminate\Support\ServiceProvider;
 class ActivityLogServiceProvider extends ServiceProvider
 {
 
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Register the service provider.
