@@ -5,7 +5,7 @@ namespace BelgiLabs\ActivityLog;
 use BelgiLabs\ActivityLog\Handlers\LogHandlerInterface;
 use Request;
 
-class ActivityLog
+class ActivityLogger
 {
     private $logHandlers = [];
     private $auth;

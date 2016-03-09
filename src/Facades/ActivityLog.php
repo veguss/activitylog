@@ -2,6 +2,7 @@
 
 namespace BelgiLabs\ActivityLog\Facades;
 
+use BelgiLabs\ActivityLog\ActivityLogger;
 use Illuminate\Support\Facades\Facade;
 
 class ActivityLog extends Facade
@@ -13,6 +14,6 @@ class ActivityLog extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'activitylog';
+        return ActivityLogger::class;
     }
 }
