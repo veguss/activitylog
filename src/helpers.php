@@ -12,6 +12,6 @@ if ( ! function_exists('alog'))
     function alog($description, $user_id = null)
     {
         $logger = app()->make('activitylog');
-        $logger::log($description, $user_id);
+        $logger->log($description, $user_id);
     }
 }
