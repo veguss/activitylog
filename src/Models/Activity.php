@@ -8,7 +8,7 @@ class Activity extends Eloquent
 {
     protected $table = 'activity_logs';
 
-    protected $fillable = ['user_id', 'actionable_type', 'actionable_id', 'action'];
+    protected $fillable = ['user_id', 'actionable_type', 'actionable_id', 'action', 'file_id'];
 
     /**
      * @return mixed
