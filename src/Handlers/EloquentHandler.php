@@ -3,23 +3,19 @@
 namespace BelgiLabs\ActivityLog\Handlers;
 
 use BelgiLabs\ActivityLog\Models\Activity;
+use Illuminate\Database\Eloquent\Model;
 
 
 class EloquentHandler implements LogHandlerInterface
 {
-
-    /**
-     * Logs activity
-     *
-     * @param $description
-     * @param null $user_id
-     */
-    public function log($description, $user_id, $ip)
+    public function log($user_id, $actionable_type, $actionable_id, $action, $fileId = null)
     {
         Activity::create([
-            'description' => $description,
-            'user_id'     => $user_id,
-            'ip'          => $ip,
+            'user_id' => $user_id,
+            'actionable_type' => $actionable_type,
+            'actionable_id' => $actionable_id,
+            'action' => $action,
+            'file_id' => $fileId
         ]);
     }
 }

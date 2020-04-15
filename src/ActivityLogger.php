@@ -4,7 +4,6 @@ namespace BelgiLabs\ActivityLog;
 
 use BelgiLabs\ActivityLog\Handlers\LogHandlerInterface;
 use Illuminate\Contracts\Auth\Guard;
-use Request;
 
 class ActivityLogger
 {
@@ -27,36 +26,10 @@ class ActivityLogger
      * @param $description
      * @param null $user_id
      */
-    public function log($description, $user_id = null)
+    public function log($user_id, $actionable_type, $actionable_id, $action, $fileId = null)
     {
-        $ip      = Request::ip();
-        $user_id = $this->extractUserId($user_id);
-
         foreach ($this->logHandlers as $handler) {
-            $handler->log($description, $user_id, $ip);
+            $handler->log($user_id, $actionable_type, $actionable_id, $action, $fileId);
         }
-    }
-
-    /**
-     * Extracts user id
-     *
-     * @param $user_id
-     * @return null
-     */
-    public function extractUserId($user_id)
-    {
-        if (is_numeric($user_id)) {
-            return $user_id;
-        }
-
-        if (is_object($user_id)) {
-            return $user_id->id;
-        }
-
-        if ($this->auth->check()) {
-            return $this->auth->user()->id;
-        }
-
-        return null;
     }
 }
